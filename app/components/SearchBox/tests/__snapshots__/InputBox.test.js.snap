@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputBox /> render without error 1`] = `
+.c0 input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  outline: none;
+  font-size: 30px;
+  background-color: bg;
+  padding-bottom: 10px;
+}
+
+.c0 input::-webkit-input-placeholder {
+  color: grey;
+  font-weight: normal;
+}
+
+.c0 input::-moz-placeholder {
+  color: grey;
+  font-weight: normal;
+}
+
+.c0 input:-ms-input-placeholder {
+  color: grey;
+  font-weight: normal;
+}
+
+.c0 input::placeholder {
+  color: grey;
+  font-weight: normal;
+}
+
+<div
+  className="c0"
+/>
+`;

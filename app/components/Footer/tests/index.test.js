@@ -1,11 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import MainLayout from '../index';
+import Footer from '../index';
 
-describe('<MainLayout />', () => {
+describe('<Footer />', () => {
   it('render without error', () => {
-    const renderedComponent = shallow(<MainLayout />)
+    const renderedComponent = shallow(<Footer />)
     expect(renderedComponent.length).toEqual(1)
-  })
-})
+  });
+});

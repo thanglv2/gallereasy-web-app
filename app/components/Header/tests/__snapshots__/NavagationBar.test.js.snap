@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Menu /> render without error 1`] = `
+.c0 {
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 > :first-child > a {
+  color: dimgrey;
+  border-right: 2px solid grey;
+  display: block;
+  padding: 0 25px;
+}
+
+<ul
+  className="c0"
+/>
+`;
+
+exports[`<MenuItem /> render without error 1`] = `
+.c0 {
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: grey;
+}
+
+.c0.active a {
+  color: black;
+}
+
+<li
+  className="c0"
+/>
+`;
+
+exports[`<NavigationBar /> render without error 1`] = `
+.c0 {
+  top: 0;
+  text-align: center;
+  border-bottom: 1px solid grey;
+}
+
+<nav
+  className="c0"
+/>
+`;
