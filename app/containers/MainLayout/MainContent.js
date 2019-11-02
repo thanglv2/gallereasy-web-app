@@ -9,6 +9,7 @@ const Layout = styled.div`
 const MainContent = styled.main`
   flex: 1;
   margin: 50px auto;
+  width: 100%;
 `;
 
 export { Layout, MainContent };

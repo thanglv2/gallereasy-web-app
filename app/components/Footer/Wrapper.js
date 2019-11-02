@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-const FooterContainer = styled.footer`
+const Wrapper = styled.footer`
   display: flex;
   justify-content: space-between;
   padding: 15px 50px;
@@ -12,4 +12,4 @@ const FooterContainer = styled.footer`
   }
 `;
 
-export default FooterContainer;
+export default Wrapper;

@@ -1,18 +1,15 @@
-import React from 'react'
-import renderer from 'react-test-renderer'
-import 'jest-styled-components'
+import React from 'react';
+import renderer from 'react-test-renderer';
 
-import InputBox from '../InputBox';
+import Wrapper from '../Wrapper';
 
-describe('<InputBox />', () => {
+describe('<Wrapper />', () => {
   it('render without error', () => {
     const theme = {
         bg: 'bg',
         grey: 'grey'
     }
-    const tree = renderer.create(<InputBox theme={theme} />).toJSON()
+    const tree = renderer.create(<Wrapper theme={theme} />).toJSON()
     expect(tree).toMatchSnapshot()
-    // expect(tree).toHaveStyleRule('color', 'grey')
-    // expect(tree).toHaveStyleRule('background-color', 'bg')
   });
 });

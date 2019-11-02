@@ -22,7 +22,8 @@ const globalStyleVariables = {
   grey: '#b6b6b6',
   dimgrey: '#696969',
   darkgrey: '#e8e8e8',
-  bg: '#fafafa'
+  bg: '#fafafa',
+  dodgerblue: "#1890ff"
 }
 
 export { GlobalStyle, globalStyleVariables };

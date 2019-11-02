@@ -1,15 +1,15 @@
 import React from 'react';
-import FooterContainer from './FooterContainer';
+import Wrapper from './Wrapper';
 
 export default function Footer() {
   return (
-    <FooterContainer>
+    <Wrapper>
       <span>
         Gallereasy POC web app
       </span>
       <span>
         2359 Media
       </span>
-    </FooterContainer>
+    </Wrapper>
   )
 }

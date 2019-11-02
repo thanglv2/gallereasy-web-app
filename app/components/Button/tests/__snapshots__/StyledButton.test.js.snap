@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StyledButton /> render without error 1`] = `
+<button
+  className="sc-bdVaJa jVOQiQ"
+  onClick={[MockFunction]}
+/>
+`;

@@ -1,7 +1,8 @@
 
 import styled from 'styled-components';
 
-const InputBox = styled.div`
+const Wrapper = styled.div`
+  text-align: center;
   input {
     border-top-style: hidden;
     border-right-style: hidden;
@@ -18,4 +19,4 @@ const InputBox = styled.div`
   }
 `;
 
-export default InputBox;
+export default Wrapper;
