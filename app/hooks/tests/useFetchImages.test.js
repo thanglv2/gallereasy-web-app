@@ -1,6 +1,6 @@
 import React from 'react';
 import { act } from 'react-dom/test-utils';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { render, unmountComponentAtNode } from "react-dom";
 import useFetchImages from '../useFetchImages';
 
@@ -13,6 +13,7 @@ beforeEach(() => {
   // setup a DOM element as a render target
   container = document.createElement("div");
   document.body.appendChild(container);
+  global.fetch.resetMocks();
 });
 
 afterEach(() => {
@@ -22,14 +23,14 @@ afterEach(() => {
   container = null;
 });
 
-describe('useFormField', () => {
+describe('useFetchImages', () => {
   it('should render', () => {
     const wrapper = shallow(<HookWrapper />);
     expect(wrapper.exists()).toBeTruthy();
   });
 
   it('should set init value', () => {
-    const wrapper = shallow(<HookWrapper hook={() => useFetchImages({})} />);
+    const wrapper = shallow(<HookWrapper hook={() => useFetchImages('')} />);
     const { hook } = wrapper.find('div').props();
     const { images, isLoading } = hook;
     expect(isLoading).toEqual(false);
@@ -53,10 +54,13 @@ describe('useFormField', () => {
       json: () => mockJsonPromise,
     });
     jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
-    await act(async () => {
-      render(<HookWrapper hook={() => useFetchImages({ searchText: 'test', currentPage: 0 })} />, container);
-    });
 
+    const wrapper = mount(<HookWrapper hook={() => useFetchImages('Test')} />);
+    const { hook } = wrapper.find('div').props();
+    const { fetchImageList } = hook;
+    await act(async () => {
+      fetchImageList()
+    });
     expect(global.fetch).toHaveBeenCalled();
   });
 
@@ -78,8 +82,11 @@ describe('useFormField', () => {
     });
     jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
 
+    const wrapper = mount(<HookWrapper hook={() => useFetchImages('Test')} />);
+    const { hook } = wrapper.find('div').props();
+    const { fetchImageList } = hook;
     await act(async () => {
-      render(<HookWrapper hook={() => useFetchImages({ searchText: '', currentPage: 1 })} />, container);
+      fetchImageList(true)
     });
     expect(global.fetch).toHaveBeenCalled();
   });

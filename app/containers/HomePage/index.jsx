@@ -6,27 +6,22 @@ import Button from 'components/Button';
 import useFetchImages from 'hooks/useFetchImages';
 
 export default function HomePage() {
-  const [searchText, setSearchText] = useState("");
-  const [currentPage, setCurrentPage] = useState(0);
-  const [query, setQuery] = useState({});
-  const { images, isLoading } = useFetchImages(query);
+  const [keyword, setKeyword] = useState("");
+  const { images, isLoading, fetchImageList } = useFetchImages(keyword);
 
   const handleSearch = useCallback(() => {
-    setQuery({ searchText });
-    setCurrentPage(0);
-  }, [searchText]);
+    fetchImageList();
+  }, [keyword, fetchImageList]);
 
   const handleLoadMore = useCallback(() => {
-    const newPage = currentPage + 1;
-    setQuery({ searchText, currentPage: newPage });
-    setCurrentPage(newPage);
-  }, [searchText, currentPage]);
+    fetchImageList(true);
+  }, [keyword, fetchImageList]);
 
   return (
     <>
       <SearchBox
-        text={searchText}
-        onChange={setSearchText}
+        text={keyword}
+        onChange={setKeyword}
         handleSearch={handleSearch}
       />
       <ImageGrid images={images} />
