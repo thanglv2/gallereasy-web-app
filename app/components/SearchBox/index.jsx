@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import InputBox from './InputBox';
+import Wrapper from './Wrapper';
 
-export default function SearchBox({ text = "" }) {
+export default function SearchBox({ text = "", onChange, handleSearch }) {
+  const handleKeyDown = useCallback((e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  }, [handleSearch]);
+
   return (
-    <InputBox>
+    <Wrapper>
       <input
         placeholder="Start searching for images!"
         value={text}
+        onChange={e => onChange(e.target.value)}
+        onKeyDown={handleKeyDown}
       />
-    </InputBox>
+    </Wrapper>
   )
 }
 
 SearchBox.propTypes = {
-  text: PropTypes.string
+  text: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  handleSearch: PropTypes.func.isRequired
 }

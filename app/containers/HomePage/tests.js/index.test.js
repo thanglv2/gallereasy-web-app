@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 
 import HomePage from '../index';
 
@@ -8,4 +8,9 @@ describe('<HomePage />', () => {
     const renderedComponent = shallow(<HomePage />)
     expect(renderedComponent.length).toEqual(1)
   });
+
+  // it('should reset currentPage state when enter on SearchBox', () => {
+  //   const wrapper = mount(<HomePage />)
+  //   console.log('wrapper HomePage', wrapper.state.currentPage)
+  // });
 });
