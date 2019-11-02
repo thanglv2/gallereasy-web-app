@@ -1,11 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import MainLayout from '../index';
+import FavouritesPage from '../index';
 
-describe('<MainLayout />', () => {
+describe('<FavouritesPage />', () => {
   it('render without error', () => {
-    const renderedComponent = shallow(<MainLayout />)
+    const renderedComponent = shallow(<FavouritesPage />)
     expect(renderedComponent.length).toEqual(1)
-  })
-})
+  });
+});
