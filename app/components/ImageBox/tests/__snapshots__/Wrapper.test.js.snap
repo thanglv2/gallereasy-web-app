@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Wrapper /> render without error 1`] = `
+.c0 {
+  margin: 0 auto;
+  position: relative;
+}
+
+.c0 div {
+  visibility: visible;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:hover div {
+  visibility: visible;
+  opacity: 1;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`<Wrapper /> render without error 2`] = `
+.c0 {
+  margin: 0 auto;
+  position: relative;
+}
+
+.c0 div {
+  visibility: hidden;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:hover div {
+  visibility: visible;
+  opacity: 0.4;
+}
+
+<div
+  className="c0"
+/>
+`;

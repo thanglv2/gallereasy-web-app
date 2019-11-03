@@ -9,7 +9,9 @@ module.exports = {
   },
   "rules": {
     'react/jsx-filename-extension': 0,
-    'react/require-default-props': 0
+    'react/require-default-props': 0,
+    'array-callback-return': 0,
+    'react/no-array-index-key': 0
   },
   "settings": {
     "import/resolver": {
