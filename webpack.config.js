@@ -1,3 +1,5 @@
+const path = require('path')
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -21,9 +23,13 @@ module.exports = {
       '.js', '.jsx',
     ],
   },
+  output: {
+    path: path.join(__dirname, '/build'),
+    filename: 'bundle.js',
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './app/index.html',
+      template: 'app/index.html',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
