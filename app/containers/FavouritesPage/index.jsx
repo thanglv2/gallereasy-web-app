@@ -1,12 +1,13 @@
 import React, {memo} from 'react';
 import ImageGrid from 'components/ImageGrid';
 import useFavourites from 'hooks/useFavourites';
+import Wrapper from './Wrapper';
 
 export default memo(function FavouritesPage() {
   const { favourites, setFavourite } = useFavourites();
 
   return (
-    <>
+    <Wrapper>
       {
         favourites.length > 0 ?
           <>
@@ -15,6 +16,6 @@ export default memo(function FavouritesPage() {
           </> :
           <h3><center>You have not had any favourite images yet!</center></h3>
       }
-    </>
+    </Wrapper>
   )
 });

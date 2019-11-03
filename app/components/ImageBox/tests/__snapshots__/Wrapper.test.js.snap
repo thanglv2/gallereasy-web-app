@@ -3,21 +3,31 @@
 exports[`<Wrapper /> render without error 1`] = `
 .c0 {
   position: relative;
-  margin: 50px auto;
+  margin: 50px 20px;
+  -webkit-transition: -webkit-transform .2s;
+  -webkit-transition: transform .2s;
+  transition: transform .2s;
 }
 
 .c0 div {
   visibility: visible;
 }
 
-@media (hover:hover) {
-  .c0:hover {
-    cursor: pointer;
-  }
+.c0:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
 
-  .c0:hover div {
-    visibility: visible;
-    opacity: 1;
+.c0:hover div {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width:600px) {
+  .c0 {
+    margin: 25px auto;
   }
 }
 
@@ -29,21 +39,31 @@ exports[`<Wrapper /> render without error 1`] = `
 exports[`<Wrapper /> render without error 2`] = `
 .c0 {
   position: relative;
-  margin: 50px auto;
+  margin: 50px 20px;
+  -webkit-transition: -webkit-transform .2s;
+  -webkit-transition: transform .2s;
+  transition: transform .2s;
 }
 
 .c0 div {
   visibility: hidden;
 }
 
-@media (hover:hover) {
-  .c0:hover {
-    cursor: pointer;
-  }
+.c0:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
 
-  .c0:hover div {
-    visibility: visible;
-    opacity: 0.4;
+.c0:hover div {
+  visibility: visible;
+  opacity: 0.4;
+}
+
+@media (max-width:600px) {
+  .c0 {
+    margin: 25px auto;
   }
 }
 

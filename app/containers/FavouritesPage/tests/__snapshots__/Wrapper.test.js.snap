@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Wrapper /> render without error 1`] = `
+.c0 {
+  width: 100%;
+  margin: 50px auto 50px;
+}
+
 <div
-  className="sc-bdVaJa ftWZRD"
+  className="c0"
 />
 `;
