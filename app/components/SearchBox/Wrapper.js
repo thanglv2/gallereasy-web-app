@@ -17,6 +17,11 @@ const Wrapper = styled.div`
       font-weight: normal;
     }
   }
+  @media(max-width: 600px) {
+    input {
+      width: 210px;
+    }
+  }
 `;
 
 export default Wrapper;

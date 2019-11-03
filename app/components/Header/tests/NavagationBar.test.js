@@ -2,7 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import 'jest-styled-components'
 
-import { NavigationBar, Menu, MenuItem } from '../NavigationBar';
+import { NavigationBar, Menu } from '../NavigationBar';
 
 describe('<NavigationBar />', () => {
   it('render without error', () => {
@@ -21,16 +21,6 @@ describe('<Menu />', () => {
       grey: 'grey'
     }
     const tree = renderer.create(<Menu theme={theme} />).toJSON()
-    expect(tree).toMatchSnapshot()
-  });
-});
-
-describe('<MenuItem />', () => {
-  it('render without error', () => {
-    const theme = {
-      grey: 'grey'
-    }
-    const tree = renderer.create(<MenuItem theme={theme} />).toJSON()
     expect(tree).toMatchSnapshot()
   });
 });
