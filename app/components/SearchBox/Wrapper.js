@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   text-align: center;
   input {
+    width: 365px;
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
