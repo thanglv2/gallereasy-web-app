@@ -11,7 +11,7 @@ export default memo(function HomePage() {
   const [keyword, setKeyword] = useState("");
   const { favourites, setFavourite } = useFavourites();
   const { images, isLoading, updateImage, fetchImages } = useFetchImages(keyword, favourites);
-  
+
   const updateFavourite = useCallback((image) => {
     updateImage(image);
     setFavourite(image);

@@ -8,7 +8,7 @@ This app was built from scratch with:
 - Jest, Enzyme
 - Webpack v4, Babel v7
 
-#Notes
+# Compatibility
 - Support Internet Explorer 11 and upwards
 - Responsive layout and mobile-friendly
 

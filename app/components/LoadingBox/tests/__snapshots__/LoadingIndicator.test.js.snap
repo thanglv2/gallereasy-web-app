@@ -2,7 +2,7 @@
 
 exports[`<LoadingIndicator /> render without error 1`] = `
 .c0 {
-  margin: 50px auto;
+  margin: 0 auto;
   border: 8px solid darkgrey;
   border-radius: 50%;
   border-top: 8px solid dodgerblue;

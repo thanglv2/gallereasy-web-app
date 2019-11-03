@@ -4,6 +4,7 @@ exports[`<Wrapper /> render without error 1`] = `
 .c0 {
   width: 100%;
   margin: 50px auto 50px;
+  padding-bottom: 10px;
 }
 
 <div
