@@ -17,6 +17,9 @@ const Wrapper = styled.div`
         transform: scale(1.1);
       }
     }
+    @media(max-width: 600px) {
+      margin: 25px auto;
+    }
   }
 `;
 
