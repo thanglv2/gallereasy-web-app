@@ -1,11 +1,11 @@
 import GiphyServices from 'services/GiphyServices';
+import axios from 'axios';
+
+jest.mock('axios');
 
 describe('GiphyServices', () => {
-  it('should fetch images', async () => {
-    const mockQuery = {
-      keyword: "test"
-    }
-    const mockSuccessResponse = {
+  const mockSuccessResponse = {
+    data: {
       data: [{
         id: 0,
         images: {
@@ -15,15 +15,18 @@ describe('GiphyServices', () => {
         },
         title: "image_0"
       }]
-    };
-    const mockJsonPromise = Promise.resolve(mockSuccessResponse);
-    const mockFetchPromise = Promise.resolve({
-      json: () => mockJsonPromise,
-    });
-    jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
+    }
+  };
+
+  it('should fetch images', async () => {
+    const mockQuery = {
+      keyword: "test"
+    }
+    
+    axios.get.mockImplementation(() => Promise.resolve(mockSuccessResponse))
     const result = await GiphyServices.fetchImages(mockQuery);
     expect(result).toEqual([{ id: 0, url: 'url_0', isFavourite: false, title: 'image_0' }]);
-    expect(global.fetch).toHaveBeenCalled();
+    expect(axios.get).toHaveBeenCalled();
   });
   
   it('should return correct result images', async () => {
@@ -32,24 +35,9 @@ describe('GiphyServices', () => {
       currentPage: 0,
       favourites: [{ id:  0}, { id: 2 }]
     }
-    const mockSuccessResponse = {
-      data: [{
-        id: 0,
-        images: {
-          fixed_width_still: {
-            url: "url_0"
-          }
-        },
-        title: "image_0"
-      }]
-    };
-    const mockJsonPromise = Promise.resolve(mockSuccessResponse);
-    const mockFetchPromise = Promise.resolve({
-      json: () => mockJsonPromise,
-    });
-    jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
+    axios.get.mockImplementation(() => Promise.resolve(mockSuccessResponse))
     const result = await GiphyServices.fetchImages(mockQuery);
     expect(result).toEqual([{ id: 0, url: 'url_0', isFavourite: true, title: 'image_0' }]);
-    expect(global.fetch).toHaveBeenCalled();
+    expect(axios.get).toHaveBeenCalled();
   });
 });

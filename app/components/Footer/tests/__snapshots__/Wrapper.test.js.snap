@@ -10,18 +10,26 @@ exports[`<NavigationBar /> render without error 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 15px 50px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  height: 50px;
+  bottom: 0;
+  width: 100%;
   background-color: darkgrey;
 }
 
 .c0 span {
   color: dimgrey;
   font-weight: 500;
+  margin: 0 50px;
 }
 
 @media (max-width:600px) {
-  .c0 {
-    padding: 15px 10px;
+  .c0 span {
+    margin: 0 10px;
   }
 }
 
