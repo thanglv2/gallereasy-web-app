@@ -40,6 +40,7 @@ function useFetchImages(keyword, favourites) {
       setImagesData({ images: freshImages.concat(newImages), isLoading: false, currentPage });
     } catch (error) {
       setImagesData({ images: [], isLoading: false, currentPage: 0 });
+      alert("Fetch images failed, please try again later!");
     }
   }, [keyword, imagesData]);
 
