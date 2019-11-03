@@ -1,18 +1,21 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    margin: 0 auto;
     position: relative;
+    margin: 50px auto;
     div {
       visibility: ${props => props.isFavourite ? 'visible' : 'hidden'};
     }
-    &:hover {
-      div {
-        visibility: visible;
-        opacity: ${props => props.isFavourite ? 1 : 0.4};
+    @media (hover:hover) {
+      &:hover {
+        div {
+          visibility: visible;
+          opacity: ${props => props.isFavourite ? 1 : 0.4};
+        }
+        cursor: pointer;
       }
-      cursor: pointer;
     }
+  }
 `;
 
 export default Wrapper;

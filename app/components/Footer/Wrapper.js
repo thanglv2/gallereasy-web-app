@@ -10,6 +10,9 @@ const Wrapper = styled.footer`
     color: ${props => props.theme.dimgrey};
     font-weight: 500;
   }
+  @media(max-width: 600px) {
+    padding: 15px 10px;
+  }
 `;
 
 export default Wrapper;

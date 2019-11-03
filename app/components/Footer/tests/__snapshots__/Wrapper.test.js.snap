@@ -19,6 +19,12 @@ exports[`<NavigationBar /> render without error 1`] = `
   font-weight: 500;
 }
 
+@media (max-width:600px) {
+  .c0 {
+    padding: 15px 10px;
+  }
+}
+
 <footer
   className="c0"
 />

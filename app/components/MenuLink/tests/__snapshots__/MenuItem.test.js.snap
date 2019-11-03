@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MenuItem /> render without error 1`] = `
+.c0 {
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: grey;
+}
+
+.c0.active a {
+  color: black;
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: 15px 10px;
+  }
+}
+
+<li
+  className="c0"
+/>
+`;

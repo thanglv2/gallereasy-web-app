@@ -2,6 +2,6 @@
 
 exports[`<Wrapper /> render without error 1`] = `
 <div
-  className="sc-bdVaJa ggcBsq"
+  className="sc-bdVaJa dtFzvq"
 />
 `;

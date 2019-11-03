@@ -26,7 +26,7 @@ const setFavourite = (image) => {
   const newFavourites = favourites.filter(favourite => favourite.id !== image.id);
   if (newFavourites.length === favourites.length) { // new favourite Image => add favourite
     favourites = produce(favourites, draftState => {
-      draftState.push(image);
+      draftState.push({ ...image, isFavourite: true });
     })
   } else { // existed favourite image => remove favourite
     favourites = newFavourites;

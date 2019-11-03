@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html',
+      template: './app/index.html',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -35,5 +35,9 @@ module.exports = {
       },
       inject: true
     })
-  ]
+  ],
+  devServer: {
+    historyApiFallback: true,
+    port: 3000
+  },
 };

@@ -17,22 +17,12 @@ const Menu = styled.ul`
     display: block;
     padding: 0 25px;
   }
-`;
 
-const MenuItem = styled.li`
-  float: left;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  a {
-    text-decoration: none;
-    color: ${props => props.theme.grey};
-  }
-  &.active {
-    a {
-      color: black;
+  @media(max-width: 600px) {
+    & > :first-child > a {
+      padding: 0 10px;
     }
   }
 `;
 
-export { NavigationBar, Menu, MenuItem };
+export { NavigationBar, Menu };
