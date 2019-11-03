@@ -9,7 +9,10 @@ export default memo(function FavouritesPage() {
     <>
       {
         favourites.length > 0 ?
-          <ImageGrid images={favourites} setFavourite={setFavourite} /> :
+          <>
+            <h3><center>This is your favourites. Click on an image to remove it.</center></h3>
+            <ImageGrid images={favourites} setFavourite={setFavourite} />
+          </> :
           <h3><center>You have not had any favourite images yet!</center></h3>
       }
     </>
