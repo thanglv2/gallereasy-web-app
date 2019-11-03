@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
     position: relative;
     margin: 50px auto;
+    transition: transform .2s;
     div {
       visibility: ${props => props.isFavourite ? 'visible' : 'hidden'};
     }
@@ -13,6 +14,7 @@ const Wrapper = styled.div`
           opacity: ${props => props.isFavourite ? 1 : 0.4};
         }
         cursor: pointer;
+        transform: scale(1.1);
       }
     }
   }
