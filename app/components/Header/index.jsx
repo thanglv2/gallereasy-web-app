@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
+
+import useFavourites from 'hooks/useFavourites';
 import { Menu, MenuItem, NavigationBar } from './NavigationBar';
 
-export default function Header() {
+export default memo(function Header() {
+  const { favourites } = useFavourites();
   return (
     <NavigationBar>
       <Menu>
@@ -13,9 +16,10 @@ export default function Header() {
           <Link to="/">Search</Link>
         </MenuItem>
         <MenuItem>
-          <Link to="/favourites">Favourites (1)</Link>
+          <Link to="/favourites">Favourites ({favourites.length})</Link>
         </MenuItem>
       </Menu>
     </NavigationBar>
   )
 }
+)

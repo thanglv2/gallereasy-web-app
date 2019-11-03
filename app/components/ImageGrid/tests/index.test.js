@@ -8,9 +8,10 @@ describe('<ImageGrid />', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
+  const setFavourite = jest.fn()
 
   it('render without error', () => {
-    const renderedComponent = shallow(<ImageGrid />);
+    const renderedComponent = shallow(<ImageGrid setFavourite={setFavourite} />);
     expect(renderedComponent.length).toEqual(1);
     expect(renderedComponent.find(ImageBox).length).toBe(0);
   });
@@ -25,7 +26,7 @@ describe('<ImageGrid />', () => {
       url: 'url_2',
       isFavourite: true
     }];
-    const renderedComponent = shallow(<ImageGrid images={mockImages} />);
+    const renderedComponent = shallow(<ImageGrid images={mockImages} setFavourite={setFavourite} />);
     expect(renderedComponent.find(ImageBox).length).toBe(2);
   });
 });

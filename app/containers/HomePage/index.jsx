@@ -1,21 +1,28 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, memo } from 'react';
 import SearchBox from 'components/SearchBox';
 import ImageGrid from 'components/ImageGrid';
 import LoadingBox from 'components/LoadingBox';
 import Button from 'components/Button';
 import useFetchImages from 'hooks/useFetchImages';
+import useFavourites from 'hooks/useFavourites';
 
-export default function HomePage() {
+export default memo(function HomePage() {
   const [keyword, setKeyword] = useState("");
-  const { images, isLoading, fetchImageList } = useFetchImages(keyword);
+  const { favourites, setFavourite } = useFavourites();
+  const { images, isLoading, updateImage, fetchImages } = useFetchImages(keyword, favourites);
+  
+  const updateFavourite = useCallback((image) => {
+    updateImage(image);
+    setFavourite(image);
+  }, [updateImage, setFavourite])
 
   const handleSearch = useCallback(() => {
-    fetchImageList();
-  }, [keyword, fetchImageList]);
+    fetchImages();
+  }, [keyword, fetchImages]);
 
   const handleLoadMore = useCallback(() => {
-    fetchImageList(true);
-  }, [keyword, fetchImageList]);
+    fetchImages(true);
+  }, [keyword, fetchImages]);
 
   return (
     <>
@@ -24,7 +31,7 @@ export default function HomePage() {
         onChange={setKeyword}
         handleSearch={handleSearch}
       />
-      <ImageGrid images={images} />
+      <ImageGrid images={images} setFavourite={updateFavourite} />
       <LoadingBox loading={isLoading}>
         {images.length > 0 && (
           <Button
@@ -35,4 +42,4 @@ export default function HomePage() {
       </LoadingBox>
     </>
   )
-}
+});

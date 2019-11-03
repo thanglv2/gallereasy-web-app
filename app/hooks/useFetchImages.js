@@ -1,15 +1,33 @@
 import { useState, useCallback } from 'react';
-import config from '../config';
+import produce from "immer";
 
-function useFetchImages(searchText) {
+import GiphyServices from 'services/GiphyServices';
+
+function useFetchImages(keyword, favourites) {
   const [imagesData, setImagesData] = useState({
     isLoading: false,
     images: [],
     currentPage: 0
   });
 
-  const fetchImageList = useCallback(async (isLoadMore) => {
-    const { GIPHY_IMAGES_URL, GIPHY_API_KEY, IMAGES_PER_PAGE } = config;
+  const updateImage = useCallback(_image => {
+    const imageIndexs = [];
+    imagesData.images.filter((image, index) => {
+      const isFound = image.id === _image.id;
+      if (isFound) imageIndexs.push(index);
+      return isFound;
+    });
+    if (imageIndexs.length > 0) {
+      const newImages = produce(imagesData.images, draftState => {
+        imageIndexs.map(index => {
+          draftState[index].isFavourite = !draftState[index].isFavourite // eslint-disable-line
+        }); 
+      });
+      setImagesData({ ...imagesData, images: newImages });
+    }
+  }, [imagesData]);
+
+  const fetchImages = useCallback(async (isLoadMore) => {
     try {
       let freshImages = [];
       let currentPage = 0;
@@ -18,27 +36,14 @@ function useFetchImages(searchText) {
         currentPage = imagesData.currentPage + 1;
       }      
       setImagesData({ images: freshImages, isLoading: true, currentPage });
-      const offset = IMAGES_PER_PAGE * currentPage;
-      
-      const response = await fetch(
-        `${GIPHY_IMAGES_URL}?api_key=${GIPHY_API_KEY}&q=${searchText}&limit=${IMAGES_PER_PAGE}}&offset=${offset}&rating=G&lang=en`
-      );
-      const json = await response.json();
-      const newImages = json.data.map(item => {
-        return {
-          id: item.id,
-          url: item.images.fixed_width_still.url,
-          isFavourite: false,
-          title: item.title
-        };
-      })
+      const newImages = await GiphyServices.fetchImages({keyword, currentPage, favourites});
       setImagesData({ images: freshImages.concat(newImages), isLoading: false, currentPage });
     } catch (error) {
       setImagesData({ images: [], isLoading: false, currentPage: 0 });
     }
-  }, [searchText, imagesData]);
+  }, [keyword, imagesData]);
 
-  return { ...imagesData, fetchImageList };
+  return { ...imagesData, fetchImages, updateImage };
 }
 
 export default useFetchImages;

@@ -46,13 +46,14 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^6.6.0",
+    "immer": "^5.0.0",
     "jest": "^24.9.0",
+    "jest-fetch-mock": "^2.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
-    "styled-components": "^4.4.1",
-    "jest-fetch-mock": "^2.1.2"
+    "styled-components": "^4.4.1"
   },
   "jest": {
     "moduleDirectories": [
