@@ -5,6 +5,7 @@ import LoadingBox from 'components/LoadingBox';
 import Button from 'components/Button';
 import useFetchImages from 'hooks/useFetchImages';
 import useFavourites from 'hooks/useFavourites';
+import Wrapper from './Wrapper';
 
 export default memo(function HomePage() {
   const [keyword, setKeyword] = useState("");
@@ -25,7 +26,7 @@ export default memo(function HomePage() {
   }, [keyword, fetchImages]);
 
   return (
-    <>
+    <Wrapper>
       <SearchBox
         text={keyword}
         onChange={setKeyword}
@@ -40,6 +41,6 @@ export default memo(function HomePage() {
         </Button>
         )}
       </LoadingBox>
-    </>
+    </Wrapper>
   )
 });

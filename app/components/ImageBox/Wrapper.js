@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
     position: relative;
-    margin: 50px auto;
+    margin: 50px 20px;
     transition: transform .2s;
     div {
       visibility: ${props => props.isFavourite ? 'visible' : 'hidden'};

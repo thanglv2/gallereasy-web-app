@@ -4,11 +4,10 @@ const Layout = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 
-const MainContent = styled.main`
-  flex: 1;
-  margin: 50px auto;
+const MainContent = styled.div`
   width: 100%;
 `;
 
