@@ -34,12 +34,14 @@ export default memo(function HomePage() {
       />
       <ImageGrid images={images} setFavourite={updateFavourite} />
       <LoadingBox loading={isLoading}>
-        {images.length > 0 && (
-          <Button
-            onClick={handleLoadMore}>
-            Fetch more
-        </Button>
-        )}
+        {
+          images.length > 0 && (
+            <Button
+              onClick={handleLoadMore}>
+              Fetch more
+            </Button>
+          )
+        }
       </LoadingBox>
     </Wrapper>
   )
