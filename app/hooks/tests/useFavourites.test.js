@@ -33,7 +33,10 @@ describe('useFavourites', () => {
     await act(async () => {
       setFavourite({ id: 0 })
     });
-
+    await act(async () => {
+      setFavourite({ id: 0 })
+    });
+    
     // jest.spyOn(localStorage, 'setItem').mockImplementation(() => jest.fn());
     // expect(localStorage.setItem).toHaveBeenCalled();
   });

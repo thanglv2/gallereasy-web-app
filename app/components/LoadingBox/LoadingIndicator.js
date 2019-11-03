@@ -6,7 +6,7 @@ const spin = keyframes`
 `;
 
 const LoadingIndicator = styled.div`
-  margin: 50px auto;
+  margin: 0 auto;
   border: 8px solid ${props => props.theme.darkgrey};
   border-radius: 50%;
   border-top: 8px solid ${props => props.theme.dodgerblue};

@@ -66,6 +66,5 @@ describe('useFetchImages', () => {
       updateImage({ id: 0 })
     });
 
-    // expect(isFavourite).toHaveBeenCalled();
   });
 });

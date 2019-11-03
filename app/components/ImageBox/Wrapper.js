@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
     position: relative;
-    margin: 50px 20px;
+    margin: 20px;
     transition: transform .2s;
     div {
       visibility: ${props => props.isFavourite ? 'visible' : 'hidden'};
@@ -22,9 +22,6 @@ const Wrapper = styled.div`
           visibility: ${props => props.isFavourite ? 'visible' : 'hidden'};
         }
       }
-    }
-    @media(max-width: 600px) {
-      margin: 25px auto;
     }
   }
 `;

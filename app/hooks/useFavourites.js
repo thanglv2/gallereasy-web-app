@@ -11,7 +11,7 @@ const broadcastListeners = () => {
 } 
 
 const fetchFavourites = () => {
-  const savedFavourites = JSON.parse(localStorage.getItem('galerreasy-favourites'));
+  const savedFavourites = JSON.parse(localStorage.getItem('gallereasy-favourites'));
   if (savedFavourites) {
     favourites = savedFavourites;
     broadcastListeners();
@@ -19,7 +19,7 @@ const fetchFavourites = () => {
 }
 
 const saveFavourites = () => {
-  localStorage.setItem('galerreasy-favourites', JSON.stringify(favourites));
+  localStorage.setItem('gallereasy-favourites', JSON.stringify(favourites));
 }
 
 const setFavourite = (image) => {

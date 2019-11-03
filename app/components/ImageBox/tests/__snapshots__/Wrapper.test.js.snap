@@ -3,7 +3,7 @@
 exports[`<Wrapper /> render without error 1`] = `
 .c0 {
   position: relative;
-  margin: 50px 20px;
+  margin: 20px;
   -webkit-transition: -webkit-transform .2s;
   -webkit-transition: transform .2s;
   transition: transform .2s;
@@ -37,12 +37,6 @@ exports[`<Wrapper /> render without error 1`] = `
   }
 }
 
-@media (max-width:600px) {
-  .c0 {
-    margin: 25px auto;
-  }
-}
-
 <div
   className="c0"
 />
@@ -51,7 +45,7 @@ exports[`<Wrapper /> render without error 1`] = `
 exports[`<Wrapper /> render without error 2`] = `
 .c0 {
   position: relative;
-  margin: 50px 20px;
+  margin: 20px;
   -webkit-transition: -webkit-transform .2s;
   -webkit-transition: transform .2s;
   transition: transform .2s;
@@ -82,12 +76,6 @@ exports[`<Wrapper /> render without error 2`] = `
 
   .c0:hover div {
     visibility: hidden;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 {
-    margin: 25px auto;
   }
 }
 
